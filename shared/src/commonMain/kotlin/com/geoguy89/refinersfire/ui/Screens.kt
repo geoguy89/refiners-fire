@@ -455,6 +455,8 @@ fun NamePanel(vm: GameViewModel, firstTime: Boolean) {
     val valid = GameViewModel.cleanName(name) != null
     GamePanel(if (firstTime) "Choose Your Player Name" else "Change Your Name", if (firstTime) null else vm::pop) {
         if (firstTime) Text("Welcome, refiner! What should we call you?", style = bodyStyle(15.sp), textAlign = TextAlign.Center)
+        val installHint = remember { if (firstTime) com.geoguy89.refinersfire.installFirstHint() else null }
+        if (installHint != null) Text(installHint, style = bodyStyle(13.sp, Palette.goldLight), textAlign = TextAlign.Center)
         OutlinedTextField(
             field, { if (it.text.length <= GameViewModel.NAME_MAX) field = it }, singleLine = true,
             label = { Text("Player name", style = bodyStyle(12.sp)) },

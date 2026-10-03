@@ -262,6 +262,7 @@ class GameViewModel(
     private var lastTickSecond = -1L
 
     init {
+        if (settings.nameChosen) com.geoguy89.refinersfire.keepSavedDataSafe()
         audio.sfxVolume = settings.sfxVolume
         audio.musicVolume = settings.musicVolume
         Palette.theme = settings.theme
@@ -1592,6 +1593,7 @@ class GameViewModel(
         click()
         updateSettings(settings.copy(playerName = name, nameChosen = true))
         online.setName(name)
+        com.geoguy89.refinersfire.keepSavedDataSafe()
         if (overlay == Overlay.ChangeName) overlays = overlays.dropLast(1)
         return true
     }

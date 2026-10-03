@@ -27,3 +27,22 @@ actual fun formatDay(day: Long): String = jsLongDay(day * 86_400_000.0)
 actual fun secureRandomBytes(n: Int): ByteArray = ByteArray(n) { jsRandomByte().toByte() }
 
 actual val isWeb: Boolean = true
+
+private fun jsIosSafariTab(): Boolean = js(
+    """{
+        var ua = navigator.userAgent || '';
+        // iPadOS reports itself as a Mac, so a touch screen gives it away.
+        var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+        var installed = navigator.standalone === true || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+        return ios && !installed;
+    }""",
+)
+
+private fun jsPersistStorage(): Unit = js(
+    "{ try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {}); } catch (e) {} }",
+)
+
+actual fun installFirstHint(): String? =
+    if (jsIosSafariTab()) "Playing on an iPhone or iPad? Add the game to your Home Screen first (tap Share, then Add to Home Screen) and choose your name there. The Home Screen app keeps its own progress, so a name chosen here in Safari won't carry over." else null
+
+actual fun keepSavedDataSafe() = jsPersistStorage()

@@ -76,11 +76,13 @@ There's nothing to download from the App Store. The game runs from a web page, a
 opens full screen like any other app. You need **iOS or iPadOS 18.2 or newer** (Settings → General → Software Update).
 
 1. Open **Safari** and go to **https://geoguy89.github.io/refiners-fire/**. It has to be Safari: other browsers on
-   iPhone can't add it properly.
+   iPhone can't add it properly. **Don't choose your player name yet.**
 2. Tap the **Share** button. On iPhone it's the square with an arrow at the bottom of the screen (tap **⋯** first if
    you don't see it); on iPad it's at the top right.
 3. Scroll down and tap **Add to Home Screen**, then **Add**.
-4. Open **Refiner's Fire** from your Home Screen (not from Safari), choose your player name, and play.
+4. Open **Refiner's Fire** from your Home Screen (not from Safari), and choose your player name **there**. The Home
+   Screen app keeps its own progress, separate from Safari, so a name chosen in the Safari tab wouldn't carry over and
+   you'd end up with two accounts.
 5. The first time you tap the screen after signing in, iOS asks whether the game may send **notifications**. Tap
    **Allow** to hear about messages, challenges, pokes, friend requests and friends' daily Manna while the game is
    closed. You can turn them off in **Options → Notifications**, or in the iPhone's **Settings → Notifications →
@@ -89,8 +91,9 @@ opens full screen like any other app. You need **iOS or iPadOS 18.2 or newer** (
 Good to know:
 
 * **Updates are automatic.** Each time you open the game it picks up the newest version by itself.
-* **Your progress is saved on that device**, in the Home Screen app. Removing the app from your Home Screen erases its
-  scores and saved games, and so does Settings → Safari → Clear History and Website Data.
+* **Your progress is saved on that device**, in the Home Screen app: your account, friends, chats, scores, achievements
+  and saved games. It stays through every update. Removing the app from your Home Screen erases it, and so does
+  Settings → Safari → Clear History and Website Data. Either way you'd start again with a new account.
 * Notifications only work in the Home Screen app. If you play in a Safari tab instead, messages, challenges and
   requests still show up inside the game whenever it's open.
 * Sharing scores over the same Wi-Fi (**Local** sharing and the **Nearby** list) isn't available on iPhone and iPad;

@@ -16,7 +16,7 @@ android {
         targetSdk = 35
         // CI sets this to the run number, so every release is newer than the last (the in-game updater relies on it).
         versionCode = System.getenv("REFINERS_BUILD_NUMBER")?.toIntOrNull() ?: 6
-        versionName = "2.6.0"
+        versionName = "2.6.1"
         // Firebase (notifications) settings come from the build environment, never from the repo.
         for (key in listOf("FIREBASE_APP_ID", "FIREBASE_API_KEY", "FIREBASE_PROJECT_ID", "FIREBASE_SENDER_ID")) {
             buildConfigField("String", key, "\"${System.getenv(key) ?: ""}\"")

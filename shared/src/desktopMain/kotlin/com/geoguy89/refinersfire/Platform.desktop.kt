@@ -20,3 +20,7 @@ private val secure = java.security.SecureRandom()
 actual fun secureRandomBytes(n: Int): ByteArray = ByteArray(n).also(secure::nextBytes)
 
 actual val isWeb: Boolean = false
+
+actual fun installFirstHint(): String? = null
+
+actual fun keepSavedDataSafe() = Unit
